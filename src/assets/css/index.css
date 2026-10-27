@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+
+/* Dizayn tokenləri — Figma "Avto Market Admin" faylından */
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand: #0a8f73;
+  --color-brand-soft: #f0faf7;
+  --color-page: #f1f4f7;
+  --color-ink: #2b3340;
+  --color-ink-2: #3d454f;
+  --color-heading: #292e38;
+  --color-muted: #7d8fa8;
+  --color-muted-2: #78808c;
+  --color-placeholder: #8794a8;
+  --color-line: #e0e5ed;
+  --color-line-strong: #d6dee5;
+  --color-line-row: #e3e8ed;
+  --color-line-soft: #e8ebf0;
+  --color-field: #f6f7f9;
+  --color-row-alt: #fbfcfd;
+  --color-link: #298fb8;
+  --color-warning: #e58c1a;
+  --color-danger: #e52e40;
+  --color-danger-text: #e5212e;
+  --color-checkbox: #4d91c2;
+  --color-info: #4a90e2;
+
+  /* Filtr paneli — SMSRadar-ın digər bölmələrindəki filtr dizaynı */
+  --color-filter: #4382bc;
+  --color-filter-bg: #f3f6f9;
+  --color-filter-line: #dfe5ec;
+  --color-filter-label: #6b7480;
+  --color-filter-icon: #4a6d8c;
+
+  --animate-slide-in-right: slide-in-right 0.22s ease-out;
+  --animate-fade-in: fade-in 0.2s ease-out;
+
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-page font-sans text-ink antialiased;
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+
+  /* Filtr panelindəki tarix sahələri: brauzerin öz təqvim ikonu gizlədilir (öz ikonumuz var) */
+  .date-plain::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+}
